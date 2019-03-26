@@ -24,7 +24,6 @@ success = out.open('./teste5.mp4',fourcc,fps,capSize,True)
 num_frames = count_frames(path)
 print(num_frames)
 
-
 get_point = 0  
 i = 0 
 

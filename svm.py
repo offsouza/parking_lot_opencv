@@ -12,7 +12,6 @@ from sklearn.svm import SVC
 from sklearn.externals import joblib
 
 
-
 class SVM ():
     
     def __init__(self):
