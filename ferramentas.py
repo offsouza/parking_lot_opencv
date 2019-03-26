@@ -6,9 +6,6 @@ import numpy as np
 from matplotlib import pyplot as plt 
 import glob
 
-                
-#WIDTH, HEIGHT = 100, 100 
-
 
 class image_utils():
 
@@ -43,10 +40,7 @@ class image_utils():
         return lista_globals
 
             
-            #scaler = MinMaxScaler(feature_range=(0, 1))
-            #Normalize The feature vectors...
-            #rescaled_features = scaler.fit_transform(global_features)
-
+            
 
     def getSpotsCoordiantesFromImage(img, num_space) :
         #coordinate_lists has this format[ [(x1,y1), (x2,y2), (x3,y3), (x4,y4)], [], [] ]
@@ -56,33 +50,31 @@ class image_utils():
             plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
             plt.xticks([]), plt.yticks([])
             #we need 4 points to get rectangle
-            print("Please click 4 points for parking lot in clock direction", i)
+            print(" Por favor clique nos 4 pontos da vaga em sentido horario", i)
             coordinate = plt.ginput(4)
-            print("clicked points coordinate are ", coordinate)
+            print("Os ponto selecionados são: ", coordinate)
             coordinate_lists.append(coordinate)
             spots_index_list.append(i)
         plt.close()
-        #saveSpotsCoordinates(coordinate_lists)
-        #saveSpotsIndex(spots_index_list)
+        
         return coordinate_lists
 
 
     ''' rotaciona imagens '''
     def getRotateRect(img, cooridnate_lists, WIDTH = 100, HEIGHT = 100):
-        #warped image list is the list with warper images
+        
         warped_img_lists = []
         i = 0 
-        #every time we process one coordinates
+        
         for coordinate in cooridnate_lists :
             warped = perspective.four_point_transform(img, coordinate)
-            #print('OOOOOOOOOOOOOOOOOOOO')
-            #print(warped)
+            
             warped_resize = cv2.resize(warped, (WIDTH, HEIGHT), interpolation=cv2.INTER_CUBIC)
             
             # plt.imshow(warped, cmap = 'gray', interpolation = 'bicubic')
             # plt.xticks([]), plt.yticks([])
             # plt.show()
-            cv2.imshow("resize %d"%i, warped_resize)
+            cv2.imshow("Vaga - %d"%i, warped_resize)
             
             warped_img_lists.append(warped_resize)
 
@@ -98,13 +90,7 @@ class image_utils():
         for files in glob.glob(path + "/*.jpg"):
             img = cv2.imread(files)
 
-            img = self.transform_image(img)
-            #img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            #img = cv2.GaussianBlur(img, (7, 7), 0)
-    
-            #img = cv2.resize(img, (WIDTH, HEIGHT), interpolation=cv2.INTER_CUBIC)
-            #print("AAAAAA")
-            #print(img.shape)
+            img = self.transform_image(img)            
             img_list.append(img)
 
         return img_list

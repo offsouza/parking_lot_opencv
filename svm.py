@@ -14,21 +14,17 @@ from sklearn.externals import joblib
 
 
 class SVM ():
-    #https://www.dummies.com/programming/big-data/data-science/classifying-estimating-svm-machine-learning/
-
+    
     def __init__(self):
 
 
         
-        #from sklearn.model_selection import cross_val_score
-
+        
         self.svm = SVC(C = 0.001, kernel='linear', verbose = True)
     
     def train(self, X_train, y_train, X_test, y_test):
         from sklearn.model_selection import cross_val_score
 
-        #print(X_train.type)
-        #print(X_test.type)
 
         cv_performance = cross_val_score(self.svm, X_train, y_train, cv=20)
 
