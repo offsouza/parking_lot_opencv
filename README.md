@@ -3,13 +3,14 @@
 
 ## Execução (Run)
 
-Primeiro instale as bibliotecas necessárias, recomendo utilizar o python3.6 que foi a versão usada no desenvolvimento:
+Primeiro instale as bibliotecas necessárias executando o comando abaixo (recomendo utilizar o python3.6 que foi a versão usada no desenvolvimento):
 
 > pip install -r req.txt
 
 Pronto, agora basta executar o arquivo app.py:
 
 > python app.py
+
 
 ## Overview
 
