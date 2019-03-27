@@ -1,0 +1,6 @@
+opencv-python
+imutils
+numpy
+matplotlib
+sklearn
+scikit-learn==0.20.2
