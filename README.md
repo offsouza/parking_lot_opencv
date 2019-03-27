@@ -16,6 +16,10 @@ Pronto, agora basta executar o arquivo app.py:
 Basicamente primeiro é extraído as features do local a ser analisado como histograma, bordas o que alimenta um algoritmo SVM para realizar a classificação. Realizei o procedimento somente em duas vagas, mas poderia ser aplicado a todas a vagas.
 
 
-
+<p align="center">
+  
+  <img  src="https://github.com/offsouza/parking_lot_opencv/blob/master/video.gif">
+  
+</p>
 
 
